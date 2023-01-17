@@ -9,12 +9,12 @@ function getComputerChoice() {
   } else if (randomNumber === 1) {
     return "Paper";
   } else {
-    return "Scissor";
+    return "Scissors";
   }
 }
 
 function getPlayerChoice(playerChoice) {
-  playerChoice = prompt("Rock, Paper, Scissor?"); //Asks for input from user
+  playerChoice = prompt("Rock, Paper, Scissors?"); //Asks for input from user
   playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase(); //Capitalize first word
   console.log("You chose "  + playerChoice);
   
@@ -25,15 +25,15 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return "It's a tie!";
   } else if (
-    (playerSelection === "Rock" && computerSelection === "Scissor") ||
+    (playerSelection === "Rock" && computerSelection === "Scissors") ||
     (playerSelection === "Paper" && computerSelection === "Rock") ||
-    (playerSelection === "Scissor" && computerSelection === "Paper")) {
+    (playerSelection === "Scissors" && computerSelection === "Paper")) {
       playerScore++;
       return "You win! " + playerSelection + " beats " + computerSelection;
   } else if (
     (playerSelection === "Rock" && computerSelection === "Paper") ||
-    (playerSelection === "Paper" && computerSelection === "Scissor") ||
-    (playerSelection === "Scissor" && computerSelection === "Rock")) {
+    (playerSelection === "Paper" && computerSelection === "Scissors") ||
+    (playerSelection === "Scissors" && computerSelection === "Rock")) {
       computerScore++
       return "You lose! " + computerSelection + " beats " + playerSelection;
   }
